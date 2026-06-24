@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-black tracking-tighter cursor-pointer"
@@ -48,10 +48,10 @@ const Navbar = () => {
             </motion.a>
           ))}
           <div className="flex items-center space-x-4 border-l border-gray-700 pl-8">
-            <a href="https://github.com/hammadkhan" target="_blank" rel="noreferrer" className="text-xl text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/Hammadkhan010?tab=repositories" target="_blank" rel="noreferrer" className="text-xl text-gray-400 hover:text-white transition-colors">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/hammadkhan" target="_blank" rel="noreferrer" className="text-xl text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/hammad-khhan/" target="_blank" rel="noreferrer" className="text-xl text-gray-400 hover:text-white transition-colors">
               <FaLinkedin />
             </a>
           </div>

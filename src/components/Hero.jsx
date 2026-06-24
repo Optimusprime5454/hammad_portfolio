@@ -12,7 +12,7 @@ const Hero = () => {
   useEffect(() => {
     const currentTitle = hero.titles[titleIndex];
     const typingSpeed = isDeleting ? 100 : 200;
-    
+
     if (!isDeleting && charIndex === currentTitle.length) {
       setTimeout(() => setIsDeleting(true), 1500);
     } else if (isDeleting && charIndex === 0) {
@@ -53,14 +53,16 @@ const Hero = () => {
             {hero.description}
           </p>
           <div className="flex flex-wrap gap-4">
-            <motion.button 
+            <motion.a
+              href={hero.cvLink}
+              download="Hammad_Khan.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-primary rounded-full font-bold shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.8)] transition-all"
+              className="px-8 py-4 bg-primary rounded-full font-bold shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.8)] transition-all flex items-center justify-center text-white no-underline"
             >
               Download CV
-            </motion.button>
-            <motion.button 
+            </motion.a>
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 glass rounded-full font-bold border border-white/10 hover:border-white/30 transition-all"
@@ -80,24 +82,24 @@ const Hero = () => {
             {/* Spinning Rings */}
             <div className="absolute inset-0 border-2 border-primary/20 rounded-[40%_60%_70%_30%] animate-[spin_10s_linear_infinite]" />
             <div className="absolute inset-4 border-2 border-accent/20 rounded-[60%_40%_30%_70%] animate-[spin_15s_linear_infinite_reverse]" />
-            
+
             <div className="absolute inset-8 overflow-hidden rounded-full border-4 border-white/10 glass">
-              <img 
-                src={hero.avatar} 
-                alt={hero.name} 
+              <img
+                src={hero.avatar}
+                alt={hero.name}
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             {/* Floating Badges */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-4 -right-4 glass p-4 rounded-2xl border border-white/10"
             >
               <span className="text-2xl">Laravel</span>
             </motion.div>
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-4 -left-4 glass p-4 rounded-2xl border border-white/10"
@@ -109,7 +111,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Down Indicator */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"

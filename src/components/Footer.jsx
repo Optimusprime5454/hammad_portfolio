@@ -10,7 +10,7 @@ const Footer = () => {
             <span className="text-white">HAMMAD</span>
             <span className="text-primary tracking-widest ml-1">KHAN</span>
           </div>
-          
+
           <div className="flex items-center gap-8 text-gray-400 text-sm font-bold uppercase tracking-widest">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
@@ -18,12 +18,12 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-xl hover:text-primary transition-all"><FaGithub /></a>
-            <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-xl hover:text-primary transition-all"><FaLinkedin /></a>
+            <a href="https://github.com/Hammadkhan010?tab=repositories" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-xl hover:text-primary transition-all"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/hammad-khhan/" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-xl hover:text-primary transition-all"><FaLinkedin /></a>
             <a href="#" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-xl hover:text-primary transition-all"><FaFacebook /></a>
           </div>
         </div>
-        
+
         <div className="text-center text-gray-500 text-xs font-medium tracking-[0.2em] uppercase">
           &copy; {new Date().getFullYear()} Hammad Khan. All Rights Reserved. Designed with ❤️ for Backend Excellence.
         </div>

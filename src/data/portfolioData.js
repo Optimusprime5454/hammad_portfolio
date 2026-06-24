@@ -8,7 +8,7 @@ export const portfolioData = {
     name: "Hammad Khan",
     titles: ["Laravel Developer", "PHP Backend Developer", "API Developer"],
     description: "PHP/Laravel Backend Developer with 1+ year of professional experience. Passionate about building scalable web applications and clean architecture.",
-    cvLink: "#",
+    cvLink: "/assets/Hammad_Khan.pdf",
     avatar: "/assets/image.jpg",
   },
   about: {
