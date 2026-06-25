@@ -64,22 +64,22 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-5 gap-10 items-start max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6 order-2 lg:order-1">
             <div className="glass p-6 sm:p-8 rounded-3xl border border-white/5 space-y-6 sm:space-y-8">
               <div className="flex items-center gap-4 sm:gap-6 group">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl sm:text-2xl group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                   <FaEnvelope />
                 </div>
-                <div className="overflow-hidden">
+                <div className="flex-1 min-w-0">
                   <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Email</p>
-                  <p className="text-white font-medium text-sm sm:text-base truncate">{contact.email}</p>
+                  <p className="text-white font-medium text-sm sm:text-base break-words lg:truncate">{contact.email}</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 sm:gap-6 group">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-xl sm:text-2xl group-hover:bg-accent group-hover:text-white transition-all shrink-0">
                   <FaPhone />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Phone</p>
                   <p className="text-white font-medium text-sm sm:text-base">{contact.phone}</p>
                 </div>
@@ -88,7 +88,7 @@ const Contact = () => {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-xl sm:text-2xl group-hover:bg-secondary group-hover:text-white transition-all shrink-0">
                   <FaMapMarkerAlt />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Location</p>
                   <p className="text-white font-medium text-sm sm:text-base">{contact.location}</p>
                 </div>
@@ -96,7 +96,7 @@ const Contact = () => {
             </div>
 
             <div className="glass p-6 sm:p-8 rounded-3xl border border-white/5">
-              <p className="text-gray-400 font-bold mb-6 italic tracking-wider text-sm">Social Connect</p>
+              <p className="text-gray-400 font-bold mb-6 italic tracking-wider text-xs sm:text-sm">Social Connect</p>
               <div className="flex items-center gap-4">
                 <a href={contact.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-2xl hover:text-primary hover:border-primary/50 transition-all"><FaGithub /></a>
                 <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-2xl hover:text-primary hover:border-primary/50 transition-all"><FaLinkedin /></a>
@@ -105,9 +105,9 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 order-1 lg:order-2">
             <form onSubmit={handleSubmit} className="glass p-6 sm:p-10 rounded-3xl border border-white/5 space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-500 ml-2">Your Name</label>
                   <input
@@ -178,4 +178,4 @@ const Contact = () => {
   );
 };
 
-// export default Contact;
+export default Contact;
