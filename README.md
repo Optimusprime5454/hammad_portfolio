@@ -2,7 +2,7 @@
 
 A premium, modern, and high-performance developer portfolio built with **React**, **Vite**, and **Tailwind CSS**. This portfolio features a sleek dark-themed SaaS aesthetic, smooth animations using **Framer Motion**, and a dynamic "Technical Arsenal" marquee.
 
-![Portfolio Preview](/public/assets/crm_system.png)
+![Portfolio Preview](/public/assets/preview.png)
 
 ## ✨ Features
 

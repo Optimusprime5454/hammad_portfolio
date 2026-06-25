@@ -62,41 +62,41 @@ const Contact = () => {
           <p className="text-gray-400">Let's discuss your next project or just say hi!</p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-10 items-start max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="glass p-8 rounded-3xl border border-white/5 space-y-8">
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+          <div className="lg:col-span-2 space-y-6">
+            <div className="glass p-6 sm:p-8 rounded-3xl border border-white/5 space-y-6 sm:space-y-8">
+              <div className="flex items-center gap-4 sm:gap-6 group">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl sm:text-2xl group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                   <FaEnvelope />
                 </div>
-                <div>
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Email</p>
-                  <p className="text-white font-medium">{contact.email}</p>
+                <div className="overflow-hidden">
+                  <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Email</p>
+                  <p className="text-white font-medium text-sm sm:text-base truncate">{contact.email}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl group-hover:bg-accent group-hover:text-white transition-all">
+              <div className="flex items-center gap-4 sm:gap-6 group">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-xl sm:text-2xl group-hover:bg-accent group-hover:text-white transition-all shrink-0">
                   <FaPhone />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Phone</p>
-                  <p className="text-white font-medium">{contact.phone}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Phone</p>
+                  <p className="text-white font-medium text-sm sm:text-base">{contact.phone}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+              <div className="flex items-center gap-4 sm:gap-6 group">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-xl sm:text-2xl group-hover:bg-secondary group-hover:text-white transition-all shrink-0">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Location</p>
-                  <p className="text-white font-medium">{contact.location}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Location</p>
+                  <p className="text-white font-medium text-sm sm:text-base">{contact.location}</p>
                 </div>
               </div>
             </div>
 
-            <div className="glass p-8 rounded-3xl border border-white/5">
-              <p className="text-gray-400 font-bold mb-6 italic tracking-wider">Social Connect</p>
+            <div className="glass p-6 sm:p-8 rounded-3xl border border-white/5">
+              <p className="text-gray-400 font-bold mb-6 italic tracking-wider text-sm">Social Connect</p>
               <div className="flex items-center gap-4">
                 <a href={contact.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-2xl hover:text-primary hover:border-primary/50 transition-all"><FaGithub /></a>
                 <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-2xl hover:text-primary hover:border-primary/50 transition-all"><FaLinkedin /></a>
@@ -106,7 +106,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass p-10 rounded-3xl border border-white/5 space-y-6">
+            <form onSubmit={handleSubmit} className="glass p-6 sm:p-10 rounded-3xl border border-white/5 space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-500 ml-2">Your Name</label>
@@ -115,7 +115,7 @@ const Contact = () => {
                     type="text"
                     required
                     placeholder="John Doe"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all text-sm sm:text-base"
                   />
                 </div>
                 <div className="space-y-2">
@@ -125,7 +125,7 @@ const Contact = () => {
                     type="email"
                     required
                     placeholder="john@example.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all text-sm sm:text-base"
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ const Contact = () => {
                   type="text"
                   required
                   placeholder="Project Inquiry"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all text-sm sm:text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -146,7 +146,7 @@ const Contact = () => {
                   required
                   rows="5"
                   placeholder="Tell me more about your project..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary/50 transition-all resize-none text-sm sm:text-base"
                 ></textarea>
               </div>
 
@@ -177,7 +177,5 @@ const Contact = () => {
     </section>
   );
 };
-
-export default Contact;
 
 // export default Contact;

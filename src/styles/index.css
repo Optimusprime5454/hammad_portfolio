@@ -56,14 +56,22 @@ h6 {
 /* Animated Blobs */
 .blob {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(180deg, #6366f1 0%, #a855f7 100%);
-  filter: blur(80px);
+  filter: blur(60px);
   border-radius: 50%;
   z-index: -1;
   opacity: 0.10;
   animation: move 5s infinite alternate;
+}
+
+@media (min-width: 1024px) {
+  .blob {
+    width: 500px;
+    height: 500px;
+    filter: blur(80px);
+  }
 }
 
 @keyframes move {

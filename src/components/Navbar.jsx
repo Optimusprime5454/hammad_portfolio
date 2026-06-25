@@ -59,33 +59,55 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <div className="lg:hidden">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-2xl text-white">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+            className="relative z-[60] text-2xl text-white p-2 hover:bg-white/10 rounded-lg transition-all"
+          >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden absolute top-full left-0 w-full bg-[#030014]/95 backdrop-blur-xl border-b border-white/10 px-6 py-8"
-        >
-          <div className="flex flex-col space-y-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-gray-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      )}
+      {/* Mobile Menu Overlay */}
+      <motion.div
+        initial={false}
+        animate={isMobileMenuOpen ? "open" : "closed"}
+        variants={{
+          open: { clipPath: "circle(150% at 100% 0%)", opacity: 1 },
+          closed: { clipPath: "circle(0% at 100% 0%)", opacity: 0 }
+        }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+        className="fixed inset-0 lg:hidden bg-[#030014] z-50 flex flex-col items-center justify-center pointer-events-none data-[open=true]:pointer-events-auto"
+        data-open={isMobileMenuOpen}
+      >
+        <div className="flex flex-col items-center space-y-8">
+          {navLinks.map((link, i) => (
+            <motion.a
+              key={link.name}
+              href={link.href}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-4xl font-black text-gray-400 hover:text-white transition-colors"
+            >
+              {link.name}
+            </motion.a>
+          ))}
+          <motion.div 
+             initial={{ opacity: 0 }}
+             animate={isMobileMenuOpen ? { opacity: 1 } : { opacity: 0 }}
+             className="flex items-center gap-8 pt-8"
+          >
+            <a href="https://github.com/Hammadkhan010?tab=repositories" target="_blank" rel="noreferrer" className="text-3xl text-gray-400 hover:text-white transition-colors">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/hammad-khhan/" target="_blank" rel="noreferrer" className="text-3xl text-gray-400 hover:text-white transition-colors">
+              <FaLinkedin />
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
     </nav>
   );
 };
